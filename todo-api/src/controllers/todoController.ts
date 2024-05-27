@@ -28,8 +28,9 @@ export const getTodo = async (req: Request, res: Response) => {
 export const createTodo = async (req: Request, res: Response) => {
   try {
     const newTodo = new TodoModel({
-      title: req.body.title,
-      completed: req.body.completed
+      name: req.body.name,
+      description: req.body.description,
+      status: req.body.status
     });
     const savedTodo = await newTodo.save();
     res.status(201).json(savedTodo);
