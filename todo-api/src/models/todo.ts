@@ -1,18 +1,28 @@
 import { Schema, model, Document } from 'mongoose';
 
 interface Todo extends Document {
-  title: string;
-  completed: boolean;
+  id: number
+	name: string
+	description: string
+	date: string
+	status: "pending" | "done"
 }
 
 const todoSchema = new Schema<Todo>({
-  title: {
+  name: {
     type: String,
     required: true
   },
-  completed: {
-    type: Boolean,
-    default: false
+  description: {
+    type: String
+  },
+  date: {
+    type: String,
+    default: Date.UTC.toString()
+  },
+  status: {
+    type: String,
+    default: "pending"
   }
 });
 
