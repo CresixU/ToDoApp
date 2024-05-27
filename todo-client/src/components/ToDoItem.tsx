@@ -3,18 +3,13 @@ import { ToDoItem } from "../todo"
 
 interface Props {
 	task: ToDoItem
-	onDelete: () => void
-	onStatusChange: () => void
+	fetchTasks: () => Promise<void> // Dodanie tej linii, aby uwzględnić nowy prop
 }
 
-const ToDoItemComponent: React.FC<Props> = ({
-	task,
-	onDelete,
-	onStatusChange,
-}) => {
+const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 	const handleDelete = async () => {
 		await fetch(`http://localhost:3000/tasks/${task.id}`, { method: "DELETE" })
-		onDelete()
+		fetchTasks() // Wywołanie, aby odświeżyć listę zadań po usunięciu
 	}
 
 	const handleStatusChange = async () => {
@@ -23,7 +18,7 @@ const ToDoItemComponent: React.FC<Props> = ({
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ ...task, status: "done" }),
 		})
-		onStatusChange()
+		fetchTasks() // Wywołanie, aby odświeżyć listę zadań po zmianie statusu
 	}
 
 	return (
