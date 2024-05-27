@@ -16,7 +16,7 @@ const ToDoList = () => {
 	}, [])
 
 	const fetchTasks = async () => {
-		const response = await fetch("http://localhost:3000/tasks") // Zmień URL na właściwy endpoint API
+		const response = await fetch("http://localhost:3001/api/todos") // Zmień URL na właściwy endpoint API
 		const data = await response.json()
 		setTasks(data)
 	}
@@ -27,7 +27,7 @@ const ToDoList = () => {
 	}
 
 	const addTask = async () => {
-		const response = await fetch("http://localhost:3000/tasks", {
+		const response = await fetch("http://localhost:3001/api/todos", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({

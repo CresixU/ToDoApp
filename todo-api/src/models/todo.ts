@@ -1,7 +1,6 @@
 import { Schema, model, Document } from 'mongoose';
 
 interface Todo extends Document {
-  id: number
 	name: string
 	description: string
 	date: string
@@ -18,7 +17,7 @@ const todoSchema = new Schema<Todo>({
   },
   date: {
     type: String,
-    default: Date.UTC.toString()
+    default: () => new Date().toISOString()
   },
   status: {
     type: String,

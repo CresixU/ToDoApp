@@ -8,12 +8,12 @@ interface Props {
 
 const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 	const handleDelete = async () => {
-		await fetch(`http://localhost:3000/tasks/${task.id}`, { method: "DELETE" })
+		await fetch(`http://localhost:3001/api/todos/${task.id}`, { method: "DELETE" })
 		fetchTasks() // Wywołanie, aby odświeżyć listę zadań po usunięciu
 	}
 
 	const handleStatusChange = async () => {
-		await fetch(`http://localhost:3000/tasks/${task.id}`, {
+		await fetch(`http://localhost:3001/api/todos/${task.id}`, {
 			method: "PUT",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ ...task, status: "done" }),
