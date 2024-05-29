@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { ToDoItem } from "../todo"
 import ToDoItemComponent from "./ToDoItem"
+import "./ToDoList.css"
 
 const ToDoList = () => {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
@@ -60,7 +61,9 @@ const ToDoList = () => {
 					placeholder='Opis zadania'
 					required
 				/>
-				<button onClick={addTask}>Dodaj nowe zadanie</button>
+				<button className='button' onClick={addTask}>
+					Dodaj nowe zadanie
+				</button>
 			</div>
 			<table>
 				<thead>

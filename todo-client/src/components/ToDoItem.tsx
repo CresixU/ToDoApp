@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { ToDoItem } from "../todo"
+import './ToDoItem.css';
 
 interface Props {
 	task: ToDoItem
