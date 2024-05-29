@@ -1,7 +1,7 @@
 /* ToDoList.css */
 .button {
 	padding: 10px 20px;
-	background-color: #66fcf1;
+	background-color: #5689b9;
 	color: #1f2833;
 	border: none;
 	border-radius: 5px;
@@ -11,9 +11,24 @@
 }
 
 .button:hover {
-	background-color: #45a29e;
+	background-color: #739fc9;
 }
 h1 {
 	text-align: center; /* Wyśrodkowanie tekstu */
-	color: #66fcf1; /* Ustawienie koloru tekstu */
+	color: #5689b9; /* Ustawienie koloru tekstu */
+}
+.input-container {
+    display: flex; /* Używamy Flexboxa do wyśrodkowania */
+    justify-content: center; /* Centruje dzieci poziomo */
+    margin: 20px 0; /* Dodaje margines górny i dolny dla oddechu */
+}
+
+input[type="text"] {
+    color: #3e96ee;
+    padding: 10px;
+    margin-right: 10px; /* Dodaje margines z prawej strony, aby oddzielić od przycisku */
+    width: 300px; /* Ustaw szerokość pól tekstowych */
+    border: 2px solid #ccc; /* Dodajemy obramowanie */
+    border-radius: 4px; /* Zaokrąglenie rogów */
+    background-color: transparent;
 }

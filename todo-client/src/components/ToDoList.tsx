@@ -40,17 +40,38 @@ const ToDoList = () => {
 			fetchTasks() // Refresh the list of tasks after adding a new one
 		}
 	}
+	const clearDatabase = async () => {
+		try {
+			const response = await fetch("http://localhost:3001/api/clearDatabase", {
+				method: "POST",
+			})
+			if (!response.ok) {
+				throw new Error(`HTTP error status: ${response.status}`)
+			}
+			const data = await response.text()
+			alert(data)
+			fetchTasks()
+		} catch (error: unknown) {
+			if (error instanceof Error) {
+				console.error("Error clearing the database: ", error)
+				alert("Error clearing the database: " + error.message)
+			} else {
+				console.error("An unexpected error occurred:", error)
+				alert("An unexpected error occurred")
+			}
+		}
+	}
 
 	return (
 		<div>
-			<h1>ToDo Application v2</h1>
-			<div style={{ marginBottom: "20px" }}>
+			<h1>ToDo Application</h1>
+			<div className='input-container'>
 				<input
 					type='text'
 					name='name'
 					value={newTask.name}
 					onChange={handleInputChange}
-					placeholder='Nazwa zadania'
+					placeholder='Nazwa zadania' //NAZWA ZADANIA
 					required
 				/>
 				<input
@@ -63,6 +84,9 @@ const ToDoList = () => {
 				/>
 				<button className='button' onClick={addTask}>
 					Dodaj nowe zadanie
+				</button>
+				<button className='button' onClick={clearDatabase}>
+					Wyczyść bazę danych
 				</button>
 			</div>
 			<table>

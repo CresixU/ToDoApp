@@ -29,3 +29,18 @@
 	background-color: white;
 	color: black;
 }
+body {
+    height: 100vh; /* Zapewnia, że gradient pokryje całą wysokość widoku */
+    background: radial-gradient(circle at center, #172f46 10%, #040d16 80%);
+    margin: 0; /* Usuwa domyślne marginesy */
+    background-attachment: fixed; /* Opcjonalnie, sprawia że tło nie przewija się razem ze stroną */
+}
+/* src/styles/ToDoItem.css */
+table {
+    color: white; /* Zmienia kolor tekstu na biały */
+}
+
+/* Jeśli chcesz wyłącznie tekst wewnątrz komórek tabeli */
+td {
+    color: white; /* Zmienia kolor tekstu na biały */
+}
