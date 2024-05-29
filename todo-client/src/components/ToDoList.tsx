@@ -42,14 +42,14 @@ const ToDoList = () => {
 
 	return (
 		<div>
-			<h1>ToDo Application</h1>
+			<h1>ToDo Application v2</h1>
 			<div style={{ marginBottom: "20px" }}>
 				<input
 					type='text'
 					name='name'
 					value={newTask.name}
 					onChange={handleInputChange}
-					placeholder='Name of the task'
+					placeholder='Nazwa zadania'
 					required
 				/>
 				<input
@@ -57,19 +57,19 @@ const ToDoList = () => {
 					name='description'
 					value={newTask.description}
 					onChange={handleInputChange}
-					placeholder='Short description'
+					placeholder='Opis zadania'
 					required
 				/>
-				<button onClick={addTask}>Add Task</button>
+				<button onClick={addTask}>Dodaj nowe zadanie</button>
 			</div>
 			<table>
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Description</th>
-						<th>Date</th>
-						<th>Status</th>
-						<th>Actions</th>
+						<th>Nazwa</th>
+						<th>Opis</th>
+						<th>Data utworzenia</th>
+						<th>Status zadania</th>
+						<th>Czynności</th>
 					</tr>
 				</thead>
 				<tbody>

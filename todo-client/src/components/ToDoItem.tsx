@@ -7,7 +7,6 @@ interface Props {
 }
 
 const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
-
 	const [editMode, setEditMode] = useState(false)
 	const [editedTask, setEditedTask] = useState({ ...task })
 
@@ -19,7 +18,6 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 
 	const saveTask = async () => {
 		await fetch(`http://localhost:3001/api/todos/${task.id}`, {
-
 			method: "PUT",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(editedTask),
@@ -33,7 +31,9 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 	}
 
 	const handleDelete = async () => {
-		await fetch(`http://localhost:3001/api/todos/${task.id}`, { method: "DELETE" })
+		await fetch(`http://localhost:3001/api/todos/${task.id}`, {
+			method: "DELETE",
+		})
 		fetchTasks()
 	}
 
@@ -69,8 +69,8 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 						name='status'
 						value={editedTask.status}
 						onChange={handleEditChange}>
-						<option value='pending'>Pending</option>
-						<option value='done'>Done</option>
+						<option value='pending'>W trakcie</option>
+						<option value='done'>Zrobione</option>
 					</select>
 				</td>
 				<td>
@@ -88,8 +88,8 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 			<td>{task.date}</td>
 			<td>{task.status}</td>
 			<td>
-				<button onClick={toggleEditMode}>Edit</button>
-				<button onClick={handleDelete}>Delete</button>
+				<button onClick={toggleEditMode}>Edytuj</button>
+				<button onClick={handleDelete}>Usuń</button>
 			</td>
 		</tr>
 	)
