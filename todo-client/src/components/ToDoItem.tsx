@@ -40,8 +40,6 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 	if (editMode) {
 	
 		return (
-			<div className="tableContainer">
-			<table>
 			<tr>
 				<td>
 					<input
@@ -81,8 +79,6 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 					<button onClick={toggleEditMode}>Cancel</button>
 				</td>
 			</tr>
-			</table>
-    </div>
 		)
 	}
 
@@ -93,8 +89,8 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 			<td>{task.date}</td>
 			<td>{task.status}</td>
 			<td>
-				<button onClick={toggleEditMode}>Edytuj</button>
-				<button onClick={() => handleDelete(task._id)}>Usuń</button>
+			<button className="edytuj" onClick={toggleEditMode}>Edytuj</button>
+			<button className="usun" onClick={() => handleDelete(task._id)}>Usuń</button>
 			</td>
 		</tr>
 	)

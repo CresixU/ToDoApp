@@ -1,30 +1,55 @@
 /* ToDoList.css */
 .button {
-	padding: 10px 30px;
-	background-color: #5689b9;
-	color: #1f2833;
-	border: none;
-	border-radius: 5px;
-	font-size: 16px;
-	cursor: pointer;
-	transition: background-color 0.3s;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 10px;
+    border: none;
+    background-color: #5689b9;
+    color: white;
+    outline: none;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(52, 95, 148, 0.644);
+    font-weight: 600; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
 }
 
 .button:hover {
-	background-color: #739fc9;
+	transform: scale(1.05) rotate(-1deg);
+	background-color: #163753; /* Ciemniejszy odcień na hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+	font-weight: 700; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+
 }
 h1 {
+	font-size: 50px;
 	text-align: center; /* Wyśrodkowanie tekstu */
 	color: #5689b9; /* Ustawienie koloru tekstu */
+}
+h3 {
+	font-size: 15px;
+	text-align: center; /* Wyśrodkowanie tekstu */
+	color: #f8fcff; /* Ustawienie koloru tekstu */
+    margin-left: 200px;
+    margin-right: 200px;
+}
+h4 {
+	font-size: 20px;
+	text-align: center; /* Wyśrodkowanie tekstu */
+	color: #848688; /* Ustawienie koloru tekstu */
+    margin-left: 200px;
+    margin-right: 200px;
 }
 .input-container {
 	display: flex; /* Używamy Flexboxa do wyśrodkowania */
 	justify-content: center; /* Centruje dzieci poziomo */
-	margin: 20px 0; /* Dodaje margines górny i dolny dla oddechu */
+	margin: 40px 0; /* Dodaje margines górny i dolny dla oddechu */
 }
 
 input[type="text"] {
-	color: #3e96ee;
+	color: white;
 	padding: 10px;
 	margin-right: 10px; /* Dodaje margines z prawej strony, aby oddzielić od przycisku */
 	width: 300px; /* Ustaw szerokość pól tekstowych */
@@ -40,7 +65,7 @@ input[type="text"] {
 }
 
 .table {
-	width: 90%; /* Możesz dostosować szerokość według potrzeb */
+	width: 100%; /* Możesz dostosować szerokość według potrzeb */
 	border-collapse: collapse;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtelny cień dla lepszego efektu wizualnego */
 }
@@ -56,4 +81,15 @@ input[type="text"] {
 .table th {
 	background-color: #e9e9e9; /* Nieco ciemniejsze tło dla nagłówków */
 	font-weight: bold; /* Pogrubienie tekstu nagłówków */
+}
+
+/* STYLISTYKA GÓRNEJ CZĘŚĆI TABELI*/
+.table-container table thead {
+	background-color: #5689b9; /* Zmieniony kolor tła */
+	color: white; /* Zmieniony kolor tekstu */
+	text-shadow: 1px 1px 2px black; /* Dodanie cienia do tekstu */
+}
+
+.table-container table thead th:last-child {
+	border-right: none; /* Usunięcie linii pionowej z ostatniej kolumny */
 }
