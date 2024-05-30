@@ -18,7 +18,7 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 	}
 
 	const saveTask = async () => {
-		await fetch(`http://localhost:3001/api/todos/${task.id}`, {
+		await fetch(`http://localhost:3001/api/todos/${task._id}`, {
 			method: "PUT",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(editedTask),
@@ -31,8 +31,8 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 		setEditMode(!editMode)
 	}
 
-	const handleDelete = async () => {
-		await fetch(`http://localhost:3001/api/todos/${task.id}`, {
+	const handleDelete = async (id:string) => {
+		await fetch(`http://localhost:3001/api/todos/${id}`, {
 			method: "DELETE",
 		})
 		fetchTasks()
@@ -90,7 +90,7 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 			<td>{task.status}</td>
 			<td>
 				<button onClick={toggleEditMode}>Edytuj</button>
-				<button onClick={handleDelete}>Usuń</button>
+				<button onClick={() => handleDelete(task._id)}>Usuń</button>
 			</td>
 		</tr>
 	)

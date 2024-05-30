@@ -41,27 +41,6 @@ const ToDoList = () => {
 			fetchTasks() // Refresh the list of tasks after adding a new one
 		}
 	}
-	const clearDatabase = async () => {
-		try {
-			const response = await fetch("http://localhost:3001/api/clearDatabase", {
-				method: "POST",
-			})
-			if (!response.ok) {
-				throw new Error(`HTTP error status: ${response.status}`)
-			}
-			const data = await response.text()
-			alert(data)
-			fetchTasks()
-		} catch (error: unknown) {
-			if (error instanceof Error) {
-				console.error("Error clearing the database: ", error)
-				alert("Error clearing the database: " + error.message)
-			} else {
-				console.error("An unexpected error occurred:", error)
-				alert("An unexpected error occurred")
-			}
-		}
-	}
 
 	return (
 		<div>
@@ -86,9 +65,6 @@ const ToDoList = () => {
 				<button className='button' onClick={addTask}>
 					Dodaj nowe zadanie
 				</button>
-				<button className='button' onClick={clearDatabase}>
-					Wyczyść bazę danych
-				</button>
 			</div>
 			
 
@@ -107,7 +83,7 @@ const ToDoList = () => {
 				<tbody>
 					{tasks.map(task => (
 						<ToDoItemComponent
-							key={task.id}
+							key={task._id}
 							task={task}
 							fetchTasks={fetchTasks}
 						/>
