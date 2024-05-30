@@ -89,8 +89,8 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 			<td>{task.date}</td>
 			<td>{task.status}</td>
 			<td>
-				<button onClick={toggleEditMode}>Edytuj</button>
-				<button onClick={() => handleDelete(task._id)}>Usuń</button>
+			<button className="edytuj" onClick={toggleEditMode}>Edytuj</button>
+			<button className="usun" onClick={() => handleDelete(task._id)}>Usuń</button>
 			</td>
 		</tr>
 	)
