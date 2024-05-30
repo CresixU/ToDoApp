@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { ToDoItem } from "../todo"
 import ToDoItemComponent from "./ToDoItem"
-import "./ToDoList.css"
+import '../css/ToDoList.css';
+
 
 const ToDoList = () => {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])

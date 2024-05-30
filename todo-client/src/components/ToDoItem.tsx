@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { ToDoItem } from "../todo"
-import './ToDoItem.css';
+import '../css/ToDoItem.css';
 
 interface Props {
 	task: ToDoItem
@@ -37,9 +37,11 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 		})
 		fetchTasks()
 	}
-
 	if (editMode) {
+	
 		return (
+			<div className="tableContainer">
+			<table>
 			<tr>
 				<td>
 					<input
@@ -79,10 +81,12 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 					<button onClick={toggleEditMode}>Cancel</button>
 				</td>
 			</tr>
+			</table>
+    </div>
 		)
 	}
 
-	return (
+	return ( //
 		<tr>
 			<td>{task.name}</td>
 			<td>{task.description}</td>
@@ -94,6 +98,7 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 			</td>
 		</tr>
 	)
+	
 }
 
 export default ToDoItemComponent
