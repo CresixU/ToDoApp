@@ -40,8 +40,6 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 	if (editMode) {
 	
 		return (
-			<div className="tableContainer">
-			<table>
 			<tr>
 				<td>
 					<input
@@ -81,8 +79,6 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 					<button onClick={toggleEditMode}>Cancel</button>
 				</td>
 			</tr>
-			</table>
-    </div>
 		)
 	}
 
