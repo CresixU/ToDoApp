@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { ToDoItem } from "../todo"
 import ToDoItemComponent from "./ToDoItem"
-import "./ToDoList.css"
+import '../css/ToDoList.css';
+
 
 const ToDoList = () => {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
@@ -50,7 +51,7 @@ const ToDoList = () => {
 					name='name'
 					value={newTask.name}
 					onChange={handleInputChange}
-					placeholder='Nazwa zadania' //NAZWA ZADANIA
+					placeholder='Nazwa zadania' //NAZWA ZADANIA*
 					required
 				/>
 				<input
@@ -65,6 +66,10 @@ const ToDoList = () => {
 					Dodaj nowe zadanie
 				</button>
 			</div>
+			
+
+
+			<div className="table-container">
 			<table>
 				<thead>
 					<tr>
@@ -72,7 +77,7 @@ const ToDoList = () => {
 						<th>Opis</th>
 						<th>Data utworzenia</th>
 						<th>Status zadania</th>
-						<th>Czynności</th>
+						<th>Czynności</th> 						
 					</tr>
 				</thead>
 				<tbody>
@@ -85,6 +90,9 @@ const ToDoList = () => {
 					))}
 				</tbody>
 			</table>
+			</div>
+
+			
 		</div>
 	)
 }
