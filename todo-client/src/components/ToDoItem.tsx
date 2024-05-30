@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { ToDoItem } from "../todo"
+import '../css/ToDoItem.css';
 
 interface Props {
 	task: ToDoItem
@@ -7,7 +8,6 @@ interface Props {
 }
 
 const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
-
 	const [editMode, setEditMode] = useState(false)
 	const [editedTask, setEditedTask] = useState({ ...task })
 
@@ -18,8 +18,7 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 	}
 
 	const saveTask = async () => {
-		await fetch(`http://localhost:3001/api/todos/${task.id}`, {
-
+		await fetch(`http://localhost:3001/api/todos/${task._id}`, {
 			method: "PUT",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(editedTask),
@@ -32,13 +31,17 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 		setEditMode(!editMode)
 	}
 
-	const handleDelete = async () => {
-		await fetch(`http://localhost:3001/api/todos/${task.id}`, { method: "DELETE" })
+	const handleDelete = async (id:string) => {
+		await fetch(`http://localhost:3001/api/todos/${id}`, {
+			method: "DELETE",
+		})
 		fetchTasks()
 	}
-
 	if (editMode) {
+	
 		return (
+			<div className="tableContainer">
+			<table>
 			<tr>
 				<td>
 					<input
@@ -69,8 +72,8 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 						name='status'
 						value={editedTask.status}
 						onChange={handleEditChange}>
-						<option value='pending'>Pending</option>
-						<option value='done'>Done</option>
+						<option value='pending'>W trakcie</option>
+						<option value='done'>Zrobione</option>
 					</select>
 				</td>
 				<td>
@@ -78,21 +81,24 @@ const ToDoItemComponent: React.FC<Props> = ({ task, fetchTasks }) => {
 					<button onClick={toggleEditMode}>Cancel</button>
 				</td>
 			</tr>
+			</table>
+    </div>
 		)
 	}
 
-	return (
+	return ( //
 		<tr>
 			<td>{task.name}</td>
 			<td>{task.description}</td>
 			<td>{task.date}</td>
 			<td>{task.status}</td>
 			<td>
-				<button onClick={toggleEditMode}>Edit</button>
-				<button onClick={handleDelete}>Delete</button>
+				<button onClick={toggleEditMode}>Edytuj</button>
+				<button onClick={() => handleDelete(task._id)}>Usuń</button>
 			</td>
 		</tr>
 	)
+	
 }
 
 export default ToDoItemComponent

@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+.app-background {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}

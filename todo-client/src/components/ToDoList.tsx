@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { ToDoItem } from "../todo"
 import ToDoItemComponent from "./ToDoItem"
+import '../css/ToDoList.css';
+
 
 const ToDoList = () => {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
@@ -43,13 +45,13 @@ const ToDoList = () => {
 	return (
 		<div>
 			<h1>ToDo Application</h1>
-			<div style={{ marginBottom: "20px" }}>
+			<div className='input-container'>
 				<input
 					type='text'
 					name='name'
 					value={newTask.name}
 					onChange={handleInputChange}
-					placeholder='Name of the task'
+					placeholder='Nazwa zadania' //NAZWA ZADANIA*
 					required
 				/>
 				<input
@@ -57,31 +59,40 @@ const ToDoList = () => {
 					name='description'
 					value={newTask.description}
 					onChange={handleInputChange}
-					placeholder='Short description'
+					placeholder='Opis zadania'
 					required
 				/>
-				<button onClick={addTask}>Add Task</button>
+				<button className='button' onClick={addTask}>
+					Dodaj nowe zadanie
+				</button>
 			</div>
+			
+
+
+			<div className="table-container">
 			<table>
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Description</th>
-						<th>Date</th>
-						<th>Status</th>
-						<th>Actions</th>
+						<th>Nazwa</th>
+						<th>Opis</th>
+						<th>Data utworzenia</th>
+						<th>Status zadania</th>
+						<th>Czynności</th> 						
 					</tr>
 				</thead>
 				<tbody>
 					{tasks.map(task => (
 						<ToDoItemComponent
-							key={task.id}
+							key={task._id}
 							task={task}
 							fetchTasks={fetchTasks}
 						/>
 					))}
 				</tbody>
 			</table>
+			</div>
+
+			
 		</div>
 	)
 }

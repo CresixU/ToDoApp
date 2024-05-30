@@ -14,8 +14,9 @@ const corsOptions = {
 connectDB();
 
 app.use(express.json());
+app.use(errorHandlingMiddleware)
 app.use(cors(corsOptions));
 app.use('/api', todoRoutes);
-app.use(errorHandlingMiddleware)
+
 
 export default app;
