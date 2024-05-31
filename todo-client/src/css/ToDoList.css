@@ -1,28 +1,5 @@
 /* ToDoList.css */
-.button {
-    padding: 10px 20px;
-    font-size: 16px;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin: 10px;
-    border: none;
-    background-color: #5689b9;
-    color: white;
-    outline: none;
-    position: relative;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(52, 95, 148, 0.644);
-    font-weight: 600; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
-}
 
-.button:hover {
-	transform: scale(1.05) rotate(-1deg);
-	background-color: #163753; /* Ciemniejszy odcień na hover */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-	font-weight: 700; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
-
-}
 h1 {
 	font-size: 50px;
 	text-align: center; /* Wyśrodkowanie tekstu */
@@ -85,7 +62,7 @@ input[type="text"] {
 
 /* STYLISTYKA GÓRNEJ CZĘŚĆI TABELI*/
 .table-container table thead {
-	background-color: #5689b9; /* Zmieniony kolor tła */
+	background-color: #002a48; /* Zmieniony kolor tła */
 	color: white; /* Zmieniony kolor tekstu */
 	text-shadow: 1px 1px 2px black; /* Dodanie cienia do tekstu */
 }

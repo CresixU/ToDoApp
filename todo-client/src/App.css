@@ -41,3 +41,59 @@
   background-position: center;
   min-height: 100vh;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #002a48;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 10px;
+  border: none;
+  background-color: #002a48;
+  color: white;
+  outline: none;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(52, 95, 148, 0.644);
+  font-weight: 600; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+}
+
+.button:hover {
+transform: scale(1.05) rotate(-1deg);
+background-color: #163753; /* Ciemniejszy odcień na hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+font-weight: 700; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+
+}
+a {
+  text-decoration: none;
+}
+
+.center {
+  margin: auto;
+}
