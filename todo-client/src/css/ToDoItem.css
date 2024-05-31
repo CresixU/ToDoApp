@@ -100,3 +100,16 @@ input, select {
 	font-weight: 700; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
 
 }
+.todo-done {
+    color: gray;
+    text-decoration: line-through;
+}
+tbody tr {
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    user-select: none;
+}
+tbody tr:hover {
+    background: rgba(1, 31, 179, 0.2);
+    color: rgba(203, 255, 255, 1);
+}

@@ -19,7 +19,9 @@ function App() {
 					</li>
 				</ul>
 			</nav>
-			<Outlet />
+			<div className="container-xxl">
+				<Outlet />
+			</div>
 	  </div>
 	)
 }

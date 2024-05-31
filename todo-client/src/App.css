@@ -91,7 +91,7 @@ font-weight: 700; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
 
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .center {

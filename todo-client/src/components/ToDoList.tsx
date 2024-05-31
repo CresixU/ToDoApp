@@ -33,7 +33,7 @@ const ToDoList = () => {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
 				...newTask,
-				date: new Date().toISOString().slice(0, 10), // Generate today's date
+				date: new Date().toISOString(), // Generate today's date
 			}),
 		})
 		if (response.ok) {
@@ -44,36 +44,44 @@ const ToDoList = () => {
 	
 	return (
 		<div>
-			<div className='input-container'>
-				<input
-					type='text'
-					name='name'
-					value={newTask.name}
-					onChange={handleInputChange}
-					placeholder='Nazwa zadania' //NAZWA ZADANIA*
-					required
-				/>
-				<input
-					type='text'
-					name='description'
-					value={newTask.description}
-					onChange={handleInputChange}
-					placeholder='Opis zadania'
-					required
-				/>
-				<button className='button' onClick={addTask}>
-					Dodaj nowe zadanie
-				</button>
+			<div className='input-container row'>
+				<div className="col-12 col-lg-4 p-2">
+					<input
+						className="w-100"
+						type='text'
+						name='name'
+						value={newTask.name}
+						onChange={handleInputChange}
+						placeholder='Nazwa zadania' //NAZWA ZADANIA*
+						required
+					/>
+				</div>
+				<div className="col-12 col-lg-4 p-2">
+					<input
+						className="w-100"
+						type='text'
+						name='description'
+						value={newTask.description}
+						onChange={handleInputChange}
+						placeholder='Opis zadania'
+						required
+					/>
+				</div>
+				<div className="col-12 col-lg-4 p-2">
+					<button className='button w-100 m-0' onClick={addTask}>
+						Dodaj nowe zadanie
+					</button>
+				</div>
 			</div>
 
-			<div className='table-container'>
-				<table>
+			<div >
+				<table className='w-100'>
 					<thead>
 						<tr>
 							<th>Nazwa</th>
 							<th>Opis</th>
 							<th>Data utworzenia</th>
-							<th>Status zadania</th>
+							<th className="d-none d-md-table-cell">Status zadania</th>
 							<th>Czynności</th>
 						</tr>
 					</thead>

@@ -3,21 +3,17 @@
 h1 {
 	font-size: 50px;
 	text-align: center; /* Wyśrodkowanie tekstu */
-	color: #5689b9; /* Ustawienie koloru tekstu */
+	color: #5689b9 !important; /* Ustawienie koloru tekstu */
 }
 h3 {
 	font-size: 15px;
 	text-align: center; /* Wyśrodkowanie tekstu */
-	color: #f8fcff; /* Ustawienie koloru tekstu */
-    margin-left: 200px;
-    margin-right: 200px;
+	color: #f8fcff !important; /* Ustawienie koloru tekstu */
 }
 h4 {
 	font-size: 20px;
 	text-align: center; /* Wyśrodkowanie tekstu */
-	color: #848688; /* Ustawienie koloru tekstu */
-    margin-left: 200px;
-    margin-right: 200px;
+	color: #848688 !important; /* Ustawienie koloru tekstu */
 }
 .input-container {
 	display: flex; /* Używamy Flexboxa do wyśrodkowania */
@@ -70,3 +66,4 @@ input[type="text"] {
 .table-container table thead th:last-child {
 	border-right: none; /* Usunięcie linii pionowej z ostatniej kolumny */
 }
+
