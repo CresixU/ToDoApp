@@ -15,101 +15,101 @@
 	color: black;
 }
 body {
-    height: 100vh; /* Zapewnia, że gradient pokryje całą wysokość widoku */
-    background: radial-gradient(circle at center, #172f46 10%, #040d16 80%);
-    margin: 0; /* Usuwa domyślne marginesy */
-    background-attachment: fixed; /* Opcjonalnie, sprawia że tło nie przewija się razem ze stroną */
+	height: 100vh; /* Zapewnia, że gradient pokryje całą wysokość widoku */
+	background: radial-gradient(circle at center, #172f46 10%, #040d16 80%);
+	margin: 0; /* Usuwa domyślne marginesy */
+	background-attachment: fixed; /* Opcjonalnie, sprawia że tło nie przewija się razem ze stroną */
 }
 /* TableStyles.css */
 .tableContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ustala wysokość kontenera na całą wysokość widoku */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* Ustala wysokość kontenera na całą wysokość widoku */
 }
 
 table {
-    width: 80%; /* Szerokość tabeli */
-    border-collapse: collapse; /* Usuwa domyślne odstępy między komórkami */
-    text-align: left; /* Wyrównanie tekstu do lewej */
-	color:white;
+	width: 80%; /* Szerokość tabeli */
+	border-collapse: collapse; /* Usuwa domyślne odstępy między komórkami */
+	text-align: left; /* Wyrównanie tekstu do lewej */
+	color: white;
 }
 
-th, td {
-    padding: 8px; /* Padding w komórkach */
-    border-bottom: 1px solid #ddd; /* Linia poniżej każdej komórki */
+th,
+td {
+	padding: 8px; /* Padding w komórkach */
+	border-bottom: 1px solid #ddd; /* Linia poniżej każdej komórki */
 }
 
 button {
-    margin: 0 5px; /* Margin wokół przycisków */
-    padding: 5px 10px; /* Padding przycisków */
+	margin: 0 5px; /* Margin wokół przycisków */
+	padding: 5px 10px; /* Padding przycisków */
 }
 
-input, select {
-    width: 100%;
-    padding: 5px;
-    box-sizing: border-box; /* Pozwala na włączenie paddingu do szerokości i wysokości */
+input,
+select {
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box; /* Pozwala na włączenie paddingu do szerokości i wysokości */
 }
 /* PRZYCISK EDYTUJ */
 .edytuj {
-    padding: 10px 20px;
-    font-size: 16px;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin: 10px;
-    border: none;
-    background-color: #3f4852;
-    color: white;
-    outline: none;
-    position: relative;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.644);
-    font-weight: 600; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+	padding: 10px 20px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin: 10px;
+	border: none;
+	background-color: #3f4852;
+	color: white;
+	outline: none;
+	position: relative;
+	transition: all 0.3s ease;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(255, 255, 255, 0.644);
+	font-weight: 600; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
 }
 /* PRZYCISK HOVER EDYTUJ */
 .edytuj:hover {
 	transform: scale(1.05) rotate(-5deg);
 	background-color: #58626d; /* Ciemniejszy odcień na hover */
-    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+	box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
 	font-weight: 700; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
-
 }
 /* PRZYCISK USUŃ */
 .usun {
-    padding: 10px 20px;
-    font-size: 16px;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin: 10px;
-    border: none;
-    background-color: #861f1f;
-    color: white;
-    outline: none;
-    position: relative;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(233, 160, 160, 0.644);
-    font-weight: 600; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+	padding: 10px 20px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin: 10px;
+	border: none;
+	background-color: #861f1f;
+	color: white;
+	outline: none;
+	position: relative;
+	transition: all 0.3s ease;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(233, 160, 160, 0.644);
+	font-weight: 600; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
 }
 /* PRZYCISK HOVER USUŃ */
 .usun:hover {
 	transform: scale(1.05) rotate(-5deg);
 	background-color: #a13434; /* Ciemniejszy odcień na hover */
-    box-shadow: 0 4px 8px rgba(233, 160, 160, 0.644);
+	box-shadow: 0 4px 8px rgba(233, 160, 160, 0.644);
 	font-weight: 700; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
-
 }
 .todo-done {
-    color: gray;
-    text-decoration: line-through;
+	color: gray;
+	text-decoration: line-through;
 }
 tbody tr {
-    cursor: pointer;
-    transition: all ease-in-out 0.3s;
-    user-select: none;
+	cursor: pointer;
+	transition: all ease-in-out 0.3s;
+	user-select: none;
 }
 tbody tr:hover {
-    background: rgba(1, 31, 179, 0.2);
-    color: rgba(203, 255, 255, 1);
+	background: rgba(1, 31, 179, 0.2);
+	color: rgba(203, 255, 255, 1);
 }

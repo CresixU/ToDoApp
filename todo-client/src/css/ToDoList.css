@@ -1,19 +1,20 @@
 /* ToDoList.css */
 
 h1 {
-	font-size: 50px;
+	font-size: 80px !important;
 	text-align: center; /* Wyśrodkowanie tekstu */
 	color: #5689b9 !important; /* Ustawienie koloru tekstu */
+	margin-bottom: 25px !important;
 }
 h3 {
-	font-size: 15px;
+	font-size: 20px !important;
 	text-align: center; /* Wyśrodkowanie tekstu */
 	color: #f8fcff !important; /* Ustawienie koloru tekstu */
 }
 h4 {
-	font-size: 20px;
+	font-size: 20px !important;
 	text-align: center; /* Wyśrodkowanie tekstu */
-	color: #848688 !important; /* Ustawienie koloru tekstu */
+	color: #70a2d1 !important; /* Ustawienie koloru tekstu */
 }
 .input-container {
 	display: flex; /* Używamy Flexboxa do wyśrodkowania */
@@ -66,4 +67,45 @@ input[type="text"] {
 .table-container table thead th:last-child {
 	border-right: none; /* Usunięcie linii pionowej z ostatniej kolumny */
 }
-
+.maintodobutton {
+	padding: 20px 30px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin: 10px;
+	border: none;
+	background-color: #476e92;
+	color: white;
+	outline: none;
+	position: relative;
+	transition: all 0.3s ease;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(255, 255, 255, 0.644);
+	font-weight: 600; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+	justify-content: center !important; /* Wyśrodkowanie poziome */
+	align-items: center !important; /* Wyśrodkowanie pionowe */
+	display: flex !important;
+	margin-top: 30px;
+}
+.maintodobutton:hover {
+	transform: scale(1.05) rotate(-5deg);
+	background-color: #92b0cc; /* Ciemniejszy odcień na hover */
+	box-shadow: 0 4px 8px rgba(255, 255, 255, 0.644);
+	font-weight: 700; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+	color: #0a233a;
+}
+.srodek {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+.logo {
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	margin-top: 30px;
+	-webkit-user-drag: none;
+	pointer-events: none;
+	user-select: none;
+}
