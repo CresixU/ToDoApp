@@ -1,30 +1,28 @@
 /* ToDoList.css */
-.button {
-	padding: 10px 30px;
-	background-color: #5689b9;
-	color: #1f2833;
-	border: none;
-	border-radius: 5px;
-	font-size: 16px;
-	cursor: pointer;
-	transition: background-color 0.3s;
-}
 
-.button:hover {
-	background-color: #739fc9;
-}
 h1 {
+	font-size: 50px;
 	text-align: center; /* Wyśrodkowanie tekstu */
-	color: #5689b9; /* Ustawienie koloru tekstu */
+	color: #5689b9 !important; /* Ustawienie koloru tekstu */
+}
+h3 {
+	font-size: 15px;
+	text-align: center; /* Wyśrodkowanie tekstu */
+	color: #f8fcff !important; /* Ustawienie koloru tekstu */
+}
+h4 {
+	font-size: 20px;
+	text-align: center; /* Wyśrodkowanie tekstu */
+	color: #848688 !important; /* Ustawienie koloru tekstu */
 }
 .input-container {
 	display: flex; /* Używamy Flexboxa do wyśrodkowania */
 	justify-content: center; /* Centruje dzieci poziomo */
-	margin: 20px 0; /* Dodaje margines górny i dolny dla oddechu */
+	margin: 40px 0; /* Dodaje margines górny i dolny dla oddechu */
 }
 
 input[type="text"] {
-	color: #3e96ee;
+	color: white;
 	padding: 10px;
 	margin-right: 10px; /* Dodaje margines z prawej strony, aby oddzielić od przycisku */
 	width: 300px; /* Ustaw szerokość pól tekstowych */
@@ -40,7 +38,7 @@ input[type="text"] {
 }
 
 .table {
-	width: 90%; /* Możesz dostosować szerokość według potrzeb */
+	width: 100%; /* Możesz dostosować szerokość według potrzeb */
 	border-collapse: collapse;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtelny cień dla lepszego efektu wizualnego */
 }
@@ -57,3 +55,15 @@ input[type="text"] {
 	background-color: #e9e9e9; /* Nieco ciemniejsze tło dla nagłówków */
 	font-weight: bold; /* Pogrubienie tekstu nagłówków */
 }
+
+/* STYLISTYKA GÓRNEJ CZĘŚĆI TABELI*/
+.table-container table thead {
+	background-color: #002a48; /* Zmieniony kolor tła */
+	color: white; /* Zmieniony kolor tekstu */
+	text-shadow: 1px 1px 2px black; /* Dodanie cienia do tekstu */
+}
+
+.table-container table thead th:last-child {
+	border-right: none; /* Usunięcie linii pionowej z ostatniej kolumny */
+}
+

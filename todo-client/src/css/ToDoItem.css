@@ -50,3 +50,66 @@ input, select {
     padding: 5px;
     box-sizing: border-box; /* Pozwala na włączenie paddingu do szerokości i wysokości */
 }
+/* PRZYCISK EDYTUJ */
+.edytuj {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 10px;
+    border: none;
+    background-color: #3f4852;
+    color: white;
+    outline: none;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.644);
+    font-weight: 600; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+}
+/* PRZYCISK HOVER EDYTUJ */
+.edytuj:hover {
+	transform: scale(1.05) rotate(-5deg);
+	background-color: #58626d; /* Ciemniejszy odcień na hover */
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+	font-weight: 700; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+
+}
+/* PRZYCISK USUŃ */
+.usun {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 10px;
+    border: none;
+    background-color: #861f1f;
+    color: white;
+    outline: none;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(233, 160, 160, 0.644);
+    font-weight: 600; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+}
+/* PRZYCISK HOVER USUŃ */
+.usun:hover {
+	transform: scale(1.05) rotate(-5deg);
+	background-color: #a13434; /* Ciemniejszy odcień na hover */
+    box-shadow: 0 4px 8px rgba(233, 160, 160, 0.644);
+	font-weight: 700; /* Mniej pogrubiona niż bold, ale bardziej niż normal */
+
+}
+.todo-done {
+    color: gray;
+    text-decoration: line-through;
+}
+tbody tr {
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    user-select: none;
+}
+tbody tr:hover {
+    background: rgba(1, 31, 179, 0.2);
+    color: rgba(203, 255, 255, 1);
+}

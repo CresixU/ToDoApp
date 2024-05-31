@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { ToDoItem } from "../todo"
 import ToDoItemComponent from "./ToDoItem"
-import '../css/ToDoList.css';
-
+import "../css/ToDoList.css"
 
 const ToDoList = () => {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
@@ -34,65 +33,69 @@ const ToDoList = () => {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
 				...newTask,
-				date: new Date().toISOString().slice(0, 10),
-			}), // Generate today's date
+				date: new Date().toISOString(), // Generate today's date
+			}),
 		})
 		if (response.ok) {
 			fetchTasks() // Refresh the list of tasks after adding a new one
+			setNewTask({ name: "", description: "", date: "", status: "pending" }) // Reset the input fields
 		}
 	}
-
+	
 	return (
 		<div>
-			<h1>ToDo Application</h1>
-			<div className='input-container'>
-				<input
-					type='text'
-					name='name'
-					value={newTask.name}
-					onChange={handleInputChange}
-					placeholder='Nazwa zadania' //NAZWA ZADANIA*
-					required
-				/>
-				<input
-					type='text'
-					name='description'
-					value={newTask.description}
-					onChange={handleInputChange}
-					placeholder='Opis zadania'
-					required
-				/>
-				<button className='button' onClick={addTask}>
-					Dodaj nowe zadanie
-				</button>
-			</div>
-			
-
-
-			<div className="table-container">
-			<table>
-				<thead>
-					<tr>
-						<th>Nazwa</th>
-						<th>Opis</th>
-						<th>Data utworzenia</th>
-						<th>Status zadania</th>
-						<th>Czynności</th> 						
-					</tr>
-				</thead>
-				<tbody>
-					{tasks.map(task => (
-						<ToDoItemComponent
-							key={task._id}
-							task={task}
-							fetchTasks={fetchTasks}
-						/>
-					))}
-				</tbody>
-			</table>
+			<div className='input-container row'>
+				<div className="col-12 col-lg-4 p-2">
+					<input
+						className="w-100"
+						type='text'
+						name='name'
+						value={newTask.name}
+						onChange={handleInputChange}
+						placeholder='Nazwa zadania' //NAZWA ZADANIA*
+						required
+					/>
+				</div>
+				<div className="col-12 col-lg-4 p-2">
+					<input
+						className="w-100"
+						type='text'
+						name='description'
+						value={newTask.description}
+						onChange={handleInputChange}
+						placeholder='Opis zadania'
+						required
+					/>
+				</div>
+				<div className="col-12 col-lg-4 p-2">
+					<button className='button w-100 m-0' onClick={addTask}>
+						Dodaj nowe zadanie
+					</button>
+				</div>
 			</div>
 
-			
+			<div >
+				<table className='w-100'>
+					<thead>
+						<tr>
+							<th>Nazwa</th>
+							<th>Opis</th>
+							<th>Data utworzenia</th>
+							<th className="d-none d-md-table-cell">Status zadania</th>
+							<th>Czynności</th>
+						</tr>
+					</thead>
+					<tbody>
+						{tasks.map(task => (
+							<ToDoItemComponent
+								key={task._id}
+								task={task}
+								fetchTasks={fetchTasks}
+							/>
+						))}
+					</tbody>
+				</table>
+			</div>
 		</div>
 	)
 }

@@ -3,5 +3,5 @@ export interface ToDoItem {
 	name: string
 	description: string
 	date: string
-	status: "w trakcie" | "zrobione"
+	status: "pending" | "done"
 }

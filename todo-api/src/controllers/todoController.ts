@@ -5,7 +5,7 @@ const errorCode500 = "Internal Server Error";
 
 export const getTodos = async (req: Request, res: Response) => {
   try {
-    const todos = await TodoModel.find().sort( { status: 'asc', date: 'desc' } );
+    const todos = await TodoModel.find().sort( { status: 'desc', date: 'asc' } );
     res.json(todos);
   } catch (error) {
     res.status(500).json({ error: errorCode500 });
